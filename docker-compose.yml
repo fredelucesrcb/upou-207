@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'my-app-db'
+      MYSQL_USER: 'app'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+  app:
+    build: ./app
+    command: bash -c "python ./app/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./frontend:/frontend

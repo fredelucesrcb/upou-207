@@ -1,0 +1,5 @@
+Django==4.2.11
+psycopg2-binary>=2.9,<3.0
+django-environ>=0.7,<1.0
+mysqlclient==2.0.1
+django-mysql==4.12.0
