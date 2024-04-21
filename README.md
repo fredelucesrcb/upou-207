@@ -24,10 +24,10 @@ If there is an error in the frontend container, run `cd frontend && npm install`
 ### 
 
 - db
-  Refers to the MySQL service
+  - Refers to the MySQL service
 
 - app
-  Refers to the Django Backend service
+  - Refers to the Django Backend service
 
 - frontend
-   Refers to the React application.
+  - Refers to the React application.
