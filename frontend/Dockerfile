@@ -1,11 +1,14 @@
-FROM node:19.5.0-alpine
+FROM node:20-alpine
 
 WORKDIR /frontend
 
-COPY . .
+COPY ./package*.json .
 
 RUN npm install
+# RUN npm install react-scripts -g --silent
 
-EXPOSE 3000
+COPY . .
+
+# EXPOSE 3000
 
 CMD ["npm", "start"]
