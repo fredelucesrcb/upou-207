@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'my-app-db',
         'USER': 'app',
         'PASSWORD': 'password',
-        'HOST': 'db',
+        'HOST': 'dbs',
         'PORT': 3306,
     }
 }
