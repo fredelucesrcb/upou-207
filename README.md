@@ -27,12 +27,15 @@ To access the Frontend, go to `http://localhost:8001/`
 
 - db
   - Refers to the MySQL service
+    - Can be accessed by using the development credentials in a GUI and pointing to port 25000.
 
 - app
   - Refers to the Django Backend service
+    - Can be accessed by going to http://localhost:8000
 
 - frontend
   - Refers to the React application.
-
+    - Can be accessed by visiting http://localhost:3001
 - mailhog
   - local mail server in order to simulate sending and receiving in a development environment
+    - can be accessed by going to http://localhost:8025
