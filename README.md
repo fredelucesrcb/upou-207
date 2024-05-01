@@ -19,6 +19,8 @@ Make sure that Docker Desktop is running by running the command, `docker ps`.
 
 If there is an error in the frontend container, run `cd frontend && npm install`, the run `docker-compose build` and `docker-compose up`.
 
+To access the Frontend, go to `http://localhost:8001/`
+
 ## Services in the Docker compose
 
 ### 
@@ -31,3 +33,6 @@ If there is an error in the frontend container, run `cd frontend && npm install`
 
 - frontend
   - Refers to the React application.
+
+- mailhog
+  - local mail server in order to simulate sending and receiving in a development environment
