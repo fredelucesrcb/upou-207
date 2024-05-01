@@ -27,5 +27,16 @@ services:
       - "3001:3000"
     volumes:
       - ./frontend:/frontend
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      WATCHPACK_POLLING: "true" 
+      FAST_REFRESH: "false"
+      WDS_SOCKET_PORT: 3001
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: always
+    ports:
+      - 1025:1025
+      - 8025:8025
 volumes:
   my-datavolume:
