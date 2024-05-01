@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
     let resJson = await res.json();
     if (res.status === 200) {
       setEmail("");
-      setMessage("User created successfully");
+      setMessage("Subscribed to Newsletter! Please check your email for a surprise");
     } else {
       setMessage("Some error occured");
     }
