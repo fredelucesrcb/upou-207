@@ -35,17 +35,25 @@ const handleSubmit = async (e) => {
 
 return (
   <div className="App">
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={email}
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <button type="submit">Subscribe</button>
-
-      <div className="message">{message ? <p>{message}</p> : null}</div>
-    </form>
+    <div id="subscribe-form-wrap">
+      <h1>
+        Subscribe to Our Newsletter!
+      </h1>
+        <form onSubmit={handleSubmit} id="subscribe-form">
+          <p>
+            <input
+              type="text"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </p>
+          <p>
+            <input type="submit" id="submit" value="Subscribe"/>
+          </p>
+          <div className="message">{message ? <p>{message}</p> : null}</div>
+        </form>
+    </div>
   </div>
 );
 };

@@ -26,7 +26,6 @@ class EmailsView(APIView):
         updated_request.update({'email': email ,'code': email_code})
         serializer = EmailSerializer(data=updated_request)
 
-        # print(updated_request)
         if serializer.is_valid():  
             serializer.save()  
 
