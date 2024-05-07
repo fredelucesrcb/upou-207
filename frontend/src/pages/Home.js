@@ -21,7 +21,6 @@ const handleSubmit = async (e) => {
       }),
     });
     let resJson = await res.json();
-    console.log(resJson);
     if (res.status === 200) {
       setEmail("");
       setMessage("Subscribed to Newsletter! Please check your email for a surprise");
@@ -42,7 +41,7 @@ return (
         <form onSubmit={handleSubmit} id="subscribe-form">
           <p>
             <input
-              type="text"
+              type="email"
               value={email}
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
