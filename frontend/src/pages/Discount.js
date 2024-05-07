@@ -1,35 +1,35 @@
-import "./Signup.css";
+// import "./Discount.css";
 import { useState } from "react";
 
-const Signup = () => {
+const Discount = () => {
 
-const [email, setEmail] = useState("");
+const [code, setCode] = useState("");
 const [message, setMessage] = useState("");
 
 
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    let res = await fetch("http://localhost:8000/apis/basic/", {
+    let res = await fetch("http://localhost:8000/apis/discount/", {
       method: "POST",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: email,
+        code: code,
       }),
     });
     let resJson = await res.json();
     console.log(resJson);
     if (res.status === 200) {
-      setEmail("");
-      setMessage("Subscribed to Newsletter! Please check your email for a surprise");
+      setCode("");
+      setMessage("Discount code valid! redirecting back to checkout page");
     } else {
-      setMessage("Some error occured");
+      setMessage("Discount code invalid");
     }
   } catch (err) {
-    setMessage("Your Email is already subscribed to our newsletter");
+    setMessage("Discount code invalid");
   }
 };
 
@@ -37,19 +37,19 @@ return (
   <div className="App">
     <div id="subscribe-form-wrap">
       <h1>
-        Subscribe to Our Newsletter!
+        Enter Discount Code
       </h1>
         <form onSubmit={handleSubmit} id="subscribe-form">
           <p>
             <input
               type="text"
-              value={email}
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
+              value={code}
+              placeholder="Discount Code"
+              onChange={(e) => setCode(e.target.value)}
             />
           </p>
           <p>
-            <input type="submit" id="submit" value="Subscribe"/>
+            <input type="submit" id="submit" value="Enter Discount Code"/>
           </p>
           <div className="message">{message ? <p>{message}</p> : null}</div>
         </form>
@@ -58,4 +58,4 @@ return (
 );
 };
 
-export default Signup;
+export default Discount;

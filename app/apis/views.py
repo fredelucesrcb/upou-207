@@ -41,3 +41,18 @@ class EmailsView(APIView):
             return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)  
         else:  
             return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
+
+class DiscountsView(APIView):  
+  
+    def get(self, request, *args, **kwargs):  
+        result = Email.objects.all()  
+        serializers = EmailSerializer(result, many=True) 
+        return Response({'status': 'success', "students":serializers.data}, status=200)  
+  
+    def post(self, request):   
+        result = Email.objects.filter(code=request.data['code'])
+
+        if result:
+            return Response({"status": "success"}, status=status.HTTP_200_OK)  
+        else:
+            return Response({"status": "error"}, status=status.HTTP_400_BAD_REQUEST)  
