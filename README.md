@@ -16,8 +16,12 @@ Make sure that Docker Desktop is running by running the command, `docker ps`.
 1. Clone the Repository
 2. Go the the root of the project by running `cd upou-207`.
 3. In the root directory, run `docker-compose build`.
+4. run `docker-compose up` to start the containers.
+### For Django Migrations 
+5. run `docker-compose exec app app/manage.py makemigrations`
+6. run `docker-compose exec app app/manage.py migrate`
 
-If there is an error in the frontend container, run `cd frontend && npm install`, the run `docker-compose build` and `docker-compose up`.
+If there is an error in the frontend container, run `cd frontend && npm install`, the run `cd .. && docker-compose build` and `docker-compose up`.
 
 To access the Frontend, go to `http://localhost:8001/`
 
